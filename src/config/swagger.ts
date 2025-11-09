@@ -14,18 +14,11 @@ const options: swaggerJSDoc.Options = {
             version: "1.0.0",
         },
         tags: [
-            {
-                name: "User Authentication",
-                description: "Authentication Endpoints"
-            },
-            {
-                name: "Product Management",
-                description: "Product Management Endpoints"
-            },
-            {
-                name: "Category Management",
-                description: "Category Management Endpoints"
-            }
+            { name: "User Authentication", description: "Authentication Endpoints" },
+            { name: "Product Management", description: "Product Management Endpoints (only for admins)" },
+            { name: "Category Management", description: "Category Management Endpoints (only for admins)" },
+            { name: "Product Listing with Filters", description: "Product Listing and Filters Endpoints" },
+            { name: "Shopping Cart & Order Management", description: "Shopping Cart and Order Management Endpoints for custormers" },
         ],
         servers: [
             {

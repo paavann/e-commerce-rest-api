@@ -4,7 +4,6 @@ import { sequelize } from "../config/db"
 
 export class User extends Model {
     public id!: string;
-    public name!: string;
     public email!: string;
     public password_hash!: string;
     public role!: 'admin' | 'customer';
@@ -21,6 +20,10 @@ User.init(
             type: DataTypes.STRING(150),
             allowNull: false,
             unique: true,
+            validate: {
+                isEmail: true,
+                notEmpty: true,
+            },
         },
         password_hash: {
             type: DataTypes.TEXT,

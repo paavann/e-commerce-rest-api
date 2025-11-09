@@ -38,6 +38,7 @@ const router = express.Router()
  *           example: mySecurePass123
 */
 
+
 /**
  * @swagger
  * /api/auth/register:

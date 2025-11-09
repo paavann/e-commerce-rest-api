@@ -72,7 +72,7 @@ Product.init(
                 key: "id",
             },
             onUpdate: "CASCADE",
-            onDelete: "RESTRICT",
+            onDelete: "CASCADE",
         },
         imageUrl: {
             type: DataTypes.STRING,
