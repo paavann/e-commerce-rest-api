@@ -18,6 +18,14 @@ const options: swaggerJSDoc.Options = {
                 name: "User Authentication",
                 description: "Authentication Endpoints"
             },
+            {
+                name: "Product Management",
+                description: "Product Management Endpoints"
+            },
+            {
+                name: "Category Management",
+                description: "Category Management Endpoints"
+            }
         ],
         servers: [
             {
@@ -27,7 +35,7 @@ const options: swaggerJSDoc.Options = {
         ],
         components: {
             securitySchemes: {
-                Bearer: {
+                bearerAuth: {
                     type: "http",
                     scheme: "bearer",
                     bearerFormat: "JWT",
@@ -41,8 +49,12 @@ const options: swaggerJSDoc.Options = {
                 },
             },
         },
+        security: [
+            { bearerAuth: [] },
+            { ApiKeyAuth: [] },
+        ]
     },
-    apis: [path.resolve(__dirname, "../routes/*.ts")]
+    apis: [path.resolve(__dirname, "../routes/**/*.ts")]
 }
 
 export const swaggerSpec = swaggerJSDoc(options)
